@@ -1,10 +1,11 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+    mode: 'production',
+    devtool: 'cheap-module-source-map',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname,'dist'),
@@ -64,6 +65,21 @@ module.exports = {
             template: __dirname + '/src/index.html',
             filename: 'index.html',
             inject: 'body'
-        })
-    ]
+        }),
+    ],
+    optimization: {
+        minimizer: [new UglifyJsPlugin({
+            uglifyOptions: {
+              warnings: false,
+              parse: {},
+              compress: {},
+              mangle: true,
+              output: null,
+              toplevel: false,
+              nameCache: null,
+              ie8: false,
+              keep_fnames: false,
+            }
+        })]
+    }
 };

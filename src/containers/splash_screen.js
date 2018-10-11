@@ -4,7 +4,7 @@ class SplashScreen extends Component {
     render() {
         return (
             <div>
-                Splash!!!!!
+                SplashScreen!!!!!
             </div>
         );
     }

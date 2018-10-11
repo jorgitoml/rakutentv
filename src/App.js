@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 
 import asyncComponent from './hoc/asyncComponent';
@@ -14,7 +14,7 @@ class App extends Component {
         return (
             <div>
                 <div>
-                    HEADER
+                    <Link to="/home">Go home</Link> | <Link to="/">Go splash</Link>
                 </div>
                 <div>
                     <Route path="/" exact component={SplashScreen} />
