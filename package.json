@@ -1,0 +1,23 @@
+{
+  "name": "rakutentv",
+  "version": "1.0.0",
+  "description": "RakutenTV Homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgitoml/rakutentv.git"
+  },
+  "author": "Jordi Mestres López",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgitoml/rakutentv/issues"
+  },
+  "homepage": "https://github.com/jorgitoml/rakutentv#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
