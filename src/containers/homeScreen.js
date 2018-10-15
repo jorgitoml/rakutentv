@@ -5,7 +5,13 @@ import AuxHoc from '../hoc/auxHoc';
 import Loading from '../components/loading.js';
 import Layout from '../hoc/layout';
 
+import * as actions from '../store/actions/index';
+
 class HomeScreen extends Component {
+
+    componentDidMount(){
+        this.props.onInitContents();
+    }
 
     render() {
 
@@ -31,4 +37,10 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps)(HomeScreen);
+const mapDispatchToProps = dispatch => {
+    return {
+        onInitContents: ()=>dispatch(actions.fetchContents())
+    };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen);

@@ -96,7 +96,8 @@ module.exports = {
         ]
     }, 
     devServer: {
-        historyApiFallback: true,
+        host: 'dev.rakuten.tv',
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
