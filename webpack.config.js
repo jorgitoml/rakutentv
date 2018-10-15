@@ -1,6 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -30,9 +31,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1,
-                            modules: true,
-                            localIdentName: '[name]__[local]__[hash:base64:5]' 
+                            importLoaders: 1
                         }
                     },
                     {
@@ -50,12 +49,49 @@ module.exports = {
                                 )
                             ]
                         } 
-                     }
+                    }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: () => [
+                                autoprefixer(
+                                    {
+                                        browsers: [
+                                            "> 1%",
+                                            "last 2 versions"
+                                        ]
+                                    }
+                                )
+                            ]
+                        }
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
                 ]
             },
             {
                 test: /\.(png|jpe?g|gif)$/,
                 loader: 'url-loader?limit:8000&name=images/[name].[ext]' 
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     }, 
@@ -67,6 +103,7 @@ module.exports = {
             template: __dirname + '/src/index.html',
             filename: 'index.html',
             inject: 'body'
-        })
+        }),
+        new WebappWebpackPlugin('./src/assets/favicon.png')
     ]
 };

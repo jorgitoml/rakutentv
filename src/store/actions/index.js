@@ -1,0 +1,1 @@
+export {fetchContentsFail} from './contentAction';

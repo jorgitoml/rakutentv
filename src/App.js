@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 import asyncComponent from './hoc/asyncComponent';
-import SplashScreen from './containers/splash_screen';
+import HomeScreen from './containers/homeScreen';
 
-const AsyncHomeScreen = asyncComponent(()=>{
-    return import ('./containers/home_screen')
+const asyncDetailScreen = asyncComponent(()=>{
+    return import('./containers/detailScreen');
 });
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <div>
-                    <Link to="/home">Go home</Link> | <Link to="/">Go splash</Link>
-                </div>
-                <div>
-                    <Route path="/" exact component={SplashScreen} />
-                    <Route path="/home" component={AsyncHomeScreen} />
-                </div>
-            </div>
+            <Switch>
+                <Route path="/detail" component={asyncDetailScreen} />
+                <Route path="/" exact component={HomeScreen} />
+                <Redirect to="/" />
+            </Switch>
         );
     }
 }

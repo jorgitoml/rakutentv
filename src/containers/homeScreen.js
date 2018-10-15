@@ -1,0 +1,34 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import AuxHoc from '../hoc/auxHoc';
+import Loading from '../components/loading.js';
+import Layout from '../hoc/layout';
+
+class HomeScreen extends Component {
+
+    render() {
+
+        return (
+            <AuxHoc>
+                {
+                    this.props.status.loading ? 
+                    <Loading  error={this.props.status.error} />
+                    :
+                    <Layout>
+                        Home!!!!!
+                    </Layout>
+                }
+            </AuxHoc>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        status: state.status,
+        data: state.content.data
+    };
+}
+
+export default connect(mapStateToProps)(HomeScreen);

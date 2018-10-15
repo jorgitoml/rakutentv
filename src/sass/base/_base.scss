@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right bottom, $color-grey-dark, $color-grey-light);
+    overflow-x: hidden;
+    font-size: $default-font-size;
+    min-height: 100vh;
+}

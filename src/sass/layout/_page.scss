@@ -1,0 +1,44 @@
+.page {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        background-color: #000;
+        border-bottom: .1rem solid $color-grey-light;
+        flex: 0 0 7rem;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 1rem 2rem;
+    }
+    
+    &__content {
+        flex-grow: 1;
+
+        overflow: hidden;
+        position: relative;
+
+        &-inner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+    }
+}
+
+.scroll-thumb-vertical {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: $color-grey-light-1;
+    transform: translateY(0px); 
+}
