@@ -2,18 +2,18 @@ import * as actionTypes from '../actions/actionTypes';
 import {updateObject} from '../../shared/utils';
 
 const initialState = {
-    data: [],
+    sections: [],
     selected: []
 
 };
 
-const fetchContentsSuccess = (state,action)=>{
-    return updateObject(state,{data: action.contents});
+const fetchSectionsSuccess = (state,action)=>{
+    return updateObject(state,{sections: action.sections});
 }
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.FETCH_CONTENTS_SUCCESS: return fetchContentsSuccess(state,action);
+        case actionTypes.FETCH_SECTIONS_SUCCESS: return fetchSectionsSuccess(state,action);
         default: return state;
     }
 }

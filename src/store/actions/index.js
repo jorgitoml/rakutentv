@@ -1,1 +1,1 @@
-export {fetchContents,fetchContentsStart,fetchContentsSuccess,fetchContentsFailed} from './contentAction';
+export {fetchSections,fetchSectionsStart,fetchSectionsSuccess,fetchSectionsFailed} from './contentAction';

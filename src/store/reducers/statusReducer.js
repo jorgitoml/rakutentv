@@ -6,23 +6,23 @@ const initialState = {
     error: false
 };
 
-const fetchContentsStart = (state)=>{
+const fetchSectionsStart = (state)=>{
     return updateObject(state,{loading: true});
 }
 
-const fetchContentsFail = (state)=>{
+const fetchSectionsFail = (state)=>{
     return updateObject(state,{error: true});
 }
 
-const fetchContentsSuccess = (state)=>{
+const fetchSectionsSuccess = (state)=>{
     return updateObject(state,{loading: false});
 }
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.FETCH_CONTENTS_START: return fetchContentsStart(state);
-        case actionTypes.FETCH_CONTENTS_FAIL: return fetchContentsFail(state);
-        case actionTypes.FETCH_CONTENTS_SUCCESS: return fetchContentsSuccess(state);
+        case actionTypes.FETCH_SECTIONS_START: return fetchSectionsStart(state);
+        case actionTypes.FETCH_SECTIONS_FAIL: return fetchSectionsFail(state);
+        case actionTypes.FETCH_SECTIONS_SUCCESS: return fetchSectionsSuccess(state);
         default: return state;
     }
 }

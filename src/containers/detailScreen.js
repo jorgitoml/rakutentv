@@ -13,8 +13,8 @@ class SplashScreen extends Component {
                     this.props.status.loading ? 
                     <Loading  error={this.props.status.error} />
                     :
-                    <Layout>
-                        Detail!!!!
+                    <Layout title="TITULO">
+                        <p>Detail!!!!</p>
                     </Layout>
                 }
             </AuxHoc>

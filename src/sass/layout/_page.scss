@@ -10,10 +10,26 @@
         flex: 0 0 7rem;
 
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
 
         padding: 1rem 2rem;
+
+        &-logo {
+            flex: 0 0 10%;
+            width: auto;
+        }
+
+        &-title {
+            flex: 0 0 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 700;
+            font-size: $title-font-size;
+            letter-spacing: .15rem;
+            padding: 0rem 5rem 0rem 10rem;
+        }
     }
     
     &__content {

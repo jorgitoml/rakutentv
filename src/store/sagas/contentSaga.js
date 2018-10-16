@@ -3,8 +3,8 @@ import axios from '../../axios.contents';
 
 import * as actions from '../actions/index';
 
-export function* fetchContentsSaga(){
-    yield put(actions.fetchContentsStart());
+export function* fetchSectionsSaga(){
+    yield put(actions.fetchSectionsStart());
     try{
         
         const getPopularesTaquilla = ()=>{
@@ -47,12 +47,12 @@ export function* fetchContentsSaga(){
             ]
         );
 
-        const contentData = {lalala:1234};
+        const sectionsData = Array.of(populares.data.data, familia.data.data, taquilla.data.data, esp.data.data, perdiste.data.data, xmen.data.data, preferidas.data.data);
 
-        yield put(actions.fetchContentsSuccess(contentData));
+        yield put(actions.fetchSectionsSuccess(sectionsData));
 
     }catch(error){
         console.log(error);
-        yield put(actions.fetchContentsFailed());
+        yield put(actions.fetchSectionsFailed());
     }
 }

@@ -10,12 +10,12 @@ const loading = (props) => {
             </figure>
             {
                 props.error ? 
-                <section className="loading__error-box">
-                    <h1 className="loading__error-title">Se ha producido un error</h1>
-                    <p className="loading__error-subtitle">Intentelo pasados unos minutos</p>
-                </section> 
+                    <section className="loading__error-box">
+                        <h1 className="loading__error-title">Se ha producido un error</h1>
+                        <p className="loading__error-subtitle">Intentelo pasados unos minutos</p>
+                    </section> 
                 : 
-                null
+                    null
             }
         </div>
     );

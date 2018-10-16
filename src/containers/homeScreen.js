@@ -10,19 +10,41 @@ import * as actions from '../store/actions/index';
 class HomeScreen extends Component {
 
     componentDidMount(){
-        this.props.onInitContents();
+        if(!this.props.sections.length){
+            this.props.onInitSections();
+        }   
     }
 
     render() {
 
+        const featuredSection = this.props.sections.find(item => item.id === 'populares-en-taquilla');
+        const notFeaturedSections = this.props.sections.filter(item => item.id !== 'populares-en-taquilla');
+
         return (
             <AuxHoc>
                 {
-                    this.props.status.loading ? 
+                    (this.props.status.loading || !this.props.sections.length) ? 
                     <Loading  error={this.props.status.error} />
                     :
                     <Layout>
-                        Home!!!!!
+
+                        <div className="home__page">
+                            <section className="home__page-section featured">
+                                featured: {featuredSection.name}
+                            </section>
+
+                            {
+                                notFeaturedSections.map(item => {
+                                    return(
+                                        <section key={item.id} className="home__page-section">
+                                            not-featured: {item.name}
+                                        </section>
+                                    )
+                                })
+                            }
+
+                        </div>
+
                     </Layout>
                 }
             </AuxHoc>
@@ -33,13 +55,13 @@ class HomeScreen extends Component {
 const mapStateToProps = state => {
     return {
         status: state.status,
-        data: state.content.data
+        sections: state.content.sections
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onInitContents: ()=>dispatch(actions.fetchContents())
+        onInitSections: ()=>dispatch(actions.fetchSections())
     };
 }
 

@@ -1,8 +1,8 @@
 import { takeEvery } from 'redux-saga/effects';
 
 import * as actionTypes from '../actions/actionTypes';
-import {fetchContentsSaga} from './contentSaga';
+import {fetchSectionsSaga} from './contentSaga';
 
-export function* watchContentSaga(){
-    yield takeEvery(actionTypes.FETCH_CONTENTS, fetchContentsSaga);
+export function* watchSectionsSaga(){
+    yield takeEvery(actionTypes.FETCH_SECTIONS, fetchSectionsSaga);
 }

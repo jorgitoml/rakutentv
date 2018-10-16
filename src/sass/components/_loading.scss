@@ -7,8 +7,7 @@
 
     &__image-box {
         width: 30%;
-        height: auto;
-        animation: fadein-fadeout 2.5s infinite
+        animation: fadein-fadeout 1.5s infinite
     }
 
     &__image {
@@ -24,14 +23,15 @@
     }
 
     &__error-title {
-        font-size: 2.5rem;
+        font-size: $title-font-size;
         font-weight: 700;
         line-height: 1;
-        color: #ff0000;
+        letter-spacing: .15rem;
+        color: $color-red-dark;
     }
 
     &__error-subtitle {
         font-size: 2rem;
-        color: #ff3300;
+        color: $color-red-light;
     }
 }

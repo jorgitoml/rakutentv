@@ -1,26 +1,26 @@
 import * as actionTypes from './actionTypes';
 
-export const fetchContents = () =>{
+export const fetchSections = () =>{
     return {
-        type: actionTypes.FETCH_CONTENTS
+        type: actionTypes.FETCH_SECTIONS
     };
 };
 
-export const fetchContentsStart = () =>{
+export const fetchSectionsStart = () =>{
     return {
-        type: actionTypes.FETCH_CONTENTS_START
+        type: actionTypes.FETCH_SECTIONS_START
     };
 };
 
-export const fetchContentsSuccess = (contents)=>{
+export const fetchSectionsSuccess = (sections)=>{
     return {
-        type: actionTypes.FETCH_CONTENTS_SUCCESS,
-        contents: contents
+        type: actionTypes.FETCH_SECTIONS_SUCCESS,
+        sections: sections
     };
 }
 
-export const fetchContentsFailed = ()=>{
+export const fetchSectionsFailed = ()=>{
     return {
-        type: actionTypes.FETCH_CONTENTS_FAIL
+        type: actionTypes.FETCH_SECTIONS_FAIL
     };
 }
