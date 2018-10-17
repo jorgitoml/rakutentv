@@ -1,4 +1,4 @@
-.page {
+.layout {
 
     min-height: 100vh;
     display: flex;
@@ -45,16 +45,13 @@
             right: 0;
             bottom: 0;
             overflow-y: auto;
+
+            margin: 0 1rem 1rem 0rem;
         }
     }
-}
 
-.scroll-thumb-vertical {
-    position: relative;
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    border-radius: inherit;
-    background-color: $color-grey-light-1;
-    transform: translateY(0px); 
+
+    &__container {
+        padding: 2rem 5rem;
+    }
 }

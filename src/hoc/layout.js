@@ -1,25 +1,24 @@
 import React from 'react';
+import Scrollbar from 'react-scrollbars-custom';
 
-import { Scrollbars } from 'react-custom-scrollbars';
-
-import logo from '../assets/header_logo_rtv.png';
+import logo from '../assets/img/header_logo_rtv.png';
 
 const Layout = (props) => {
     return (
-        <div className="page">
-            <header className="page__header">
-                <img className="page__header-logo" alt="Logo" src={logo} />
+        <div className="layout">
+            <header className="layout__header">
+                <img className="layout__header-logo" alt="Logo" src={logo} />
                 {
-                    props.title ? <div className="page__header-title">{props.title}</div>:null
+                    props.title ? <div className="layout__header-title">{props.title}</div>:null
                 }
             </header>
-            <main className="page__content">
-                <div className="page__content-inner">
-                    <Scrollbars
-                        renderThumbVertical={props => <div {...props} className="scroll-thumb-vertical"/>}
-                    >
-                        {props.children}
-                    </Scrollbars>
+            <main className="layout__content">
+                <div className="layout__content-inner">
+                    <Scrollbar style={{height: '100%'}}>
+                        <div className="layout__container">
+                            {props.children}
+                        </div>
+                    </Scrollbar>
                 </div>
             </main>
         </div>

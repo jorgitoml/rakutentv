@@ -1,0 +1,12 @@
+.movie__section {
+    margin: 0 5rem;
+
+    &__title {
+        padding: 1rem 2rem;
+        font-size: $sub-title-font-size;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: .1rem;
+        color: $color-primary;
+    }
+}

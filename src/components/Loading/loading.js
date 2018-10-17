@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../assets/logo_rtv.png';
+import logo from '../../assets/img/logo_rtv.png';
 
 const loading = (props) => {
     return (

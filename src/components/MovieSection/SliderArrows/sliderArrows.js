@@ -1,0 +1,18 @@
+import React from 'react';
+import arrow from '../../../assets/img/slider-arrow.png';
+
+export const sliderArrowRight = (props) => {
+    return (
+        <div className="slider-arrows slick-next">
+            <img alt="next" src={arrow} />
+        </div>
+    );
+};
+
+export const sliderArrowLeft = (props) => {
+    return (
+        <div className="slider-arrows slick-prev">
+            <img alt="prev" src={arrow} />
+        </div>
+    );
+};

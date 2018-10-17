@@ -1,0 +1,13 @@
+.slider-arrows {
+    opacity: .5;
+    transition: all .2s;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.slick-prev > img {
+        transform: rotate(180deg);
+        
+    }
+}

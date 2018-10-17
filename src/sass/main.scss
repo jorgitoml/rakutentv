@@ -4,8 +4,10 @@
 @import "base/typography";
 @import "base/animations";
 
-@import "layout/page";
+@import "layout/layout";
 
 @import "pages/home";
 
 @import "components/loading";
+@import "components/movie-section";
+@import "components/slider-arrows";

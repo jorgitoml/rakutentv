@@ -90,8 +90,14 @@ module.exports = {
                 loader: 'url-loader?limit:8000&name=images/[name].[ext]' 
             },
             {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader'
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
             }
         ]
     }, 
@@ -105,6 +111,6 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
-        new WebappWebpackPlugin('./src/assets/favicon.png')
+        new WebappWebpackPlugin('./src/assets/img/favicon.png')
     ]
 };

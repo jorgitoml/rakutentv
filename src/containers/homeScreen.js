@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import AuxHoc from '../hoc/auxHoc';
-import Loading from '../components/loading.js';
+import Loading from '../components/Loading/loading.js';
 import Layout from '../hoc/layout';
+import MovieSection from '../components/MovieSection/movieSection';
 
 import * as actions from '../store/actions/index';
+
+import '../assets/css/slick.css';
+import '../assets/css/slick-theme.css';
 
 class HomeScreen extends Component {
 
@@ -17,9 +21,6 @@ class HomeScreen extends Component {
 
     render() {
 
-        const featuredSection = this.props.sections.find(item => item.id === 'populares-en-taquilla');
-        const notFeaturedSections = this.props.sections.filter(item => item.id !== 'populares-en-taquilla');
-
         return (
             <AuxHoc>
                 {
@@ -27,24 +28,9 @@ class HomeScreen extends Component {
                     <Loading  error={this.props.status.error} />
                     :
                     <Layout>
-
-                        <div className="home__page">
-                            <section className="home__page-section featured">
-                                featured: {featuredSection.name}
-                            </section>
-
-                            {
-                                notFeaturedSections.map(item => {
-                                    return(
-                                        <section key={item.id} className="home__page-section">
-                                            not-featured: {item.name}
-                                        </section>
-                                    )
-                                })
-                            }
-
-                        </div>
-
+                        {
+                            this.props.sections.map(item=><MovieSection key={item.id} section={item} />)
+                        }
                     </Layout>
                 }
             </AuxHoc>
