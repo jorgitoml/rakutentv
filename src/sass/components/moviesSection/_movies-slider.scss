@@ -20,7 +20,7 @@
                 opacity: 1;
             }
 
-            & > img {
+            & img {
                 width: 100%;
                 height: 100%;
             }
@@ -45,22 +45,38 @@
         overflow:hidden;
         cursor: pointer;
         flex: 1 0 20%;
-        border-radius: 1rem;
-        transform: scale(.9);
-
-        transition: all .2s;
+        padding: .2rem;
         
-        &:hover {
-            transform: scale(1);
-            border: solid 2px #fff;
-        }
+        
 
-
-        & > img {
+        & img {
             width: 100%;
             height: 100%;
+            border-radius: 1rem;
+
+            transform: scale(.9);
+            transition: all .2s;
+
+            &:hover {
+                transform: scale(1);
+                border: solid 2px $color-primary;
+            }
+        }
+
+        &.sliding_track {
+            transition:transform .25s ease;
+            &-prev{
+                transform:translateX(20%);
+            }
+            &-next{
+                transform:translateX(-20%);
+            }
+        }
+
+        &.not-sliding_track {
+            transition: transform .5s ease;
+            transform: translateX(0%);
         }
     }
 
-    
 }
