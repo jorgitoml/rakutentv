@@ -9,5 +9,6 @@
 @import "pages/home";
 
 @import "components/loading";
-@import "components/movie-section";
-@import "components/slider-arrows";
+@import "components/movieSection/movie-section";
+@import "components/movieSection/slider-arrows";
+@import "components/movieSection/movieItem";

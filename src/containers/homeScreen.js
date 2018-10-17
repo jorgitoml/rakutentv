@@ -19,6 +19,10 @@ class HomeScreen extends Component {
         }   
     }
 
+    hanleMovieClick = (id) => {
+        console.log(id);
+    }
+
     render() {
 
         return (
@@ -29,7 +33,7 @@ class HomeScreen extends Component {
                     :
                     <Layout>
                         {
-                            this.props.sections.map(item=><MovieSection key={item.id} section={item} />)
+                            this.props.sections.map(item=><MovieSection key={item.id} section={item} showDetail={this.hanleMovieClick} />)
                         }
                     </Layout>
                 }
