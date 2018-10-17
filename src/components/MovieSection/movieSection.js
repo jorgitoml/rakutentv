@@ -7,7 +7,7 @@ const MovieSection = (props) => {
 
     const settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         autoplay: false,
         slidesToScroll: 1,
