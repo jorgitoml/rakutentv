@@ -4,12 +4,9 @@ import { connect } from 'react-redux';
 import AuxHoc from '../hoc/auxHoc';
 import Loading from '../components/Loading/loading.js';
 import Layout from '../hoc/layout';
-import MovieSection from '../components/MovieSection/movieSection';
+import MoviesSection from '../components/MoviesSection/moviesSection';
 
 import * as actions from '../store/actions/index';
-
-import '../assets/css/slick.css';
-import '../assets/css/slick-theme.css';
 
 class HomeScreen extends Component {
 
@@ -36,7 +33,8 @@ class HomeScreen extends Component {
                     :
                     <Layout>
                         {
-                            this.props.sections.map(item=><MovieSection key={item.id} section={item} showDetail={this.hanleMovieClick} />)
+                            //TEST SLICE
+                            this.props.sections.map(item=><MoviesSection key={item.id} section={item} showDetail={this.hanleMovieClick} />)
                         }
                     </Layout>
                 }
