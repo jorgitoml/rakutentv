@@ -20,7 +20,10 @@ class HomeScreen extends Component {
     }
 
     hanleMovieClick = (id) => {
-        console.log(id);
+        this.props.history.push({
+            pathname: '/detail',
+            search: `id=${id}`
+        });
     }
 
     render() {
