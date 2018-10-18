@@ -9,7 +9,7 @@
 
         &__previous-button,
         &__next-button {
-            padding: .5rem;
+            margin: 0 .5rem;
             cursor: pointer;
             flex: 0 0 2%;
 
@@ -30,53 +30,35 @@
             transform: rotate(180deg);
         }
 
-        &__track {
-            flex: 1 0 96%;
+        &__viewer {
 
             display: flex;
-            height: 100%;
+            align-items: center;
+            justify-content: space-between;
             overflow: hidden;
-        }
-    }
 
+            &__track {
+                flex: 1 0 96%;
     
+                display: flex;
+                height: 100%;
 
-    &__slot {
-        overflow:hidden;
-        cursor: pointer;
-        flex: 1 0 20%;
-        padding: .2rem;
+                &.sliding_track {
+                    transition:transform .25s ease;
+                    &-prev{
+                        transform:translateX(calc(5% - calc(100%/#{$slidesShown})));
+                    }
+                    &-next{
+                        transform:translateX(calc(-5% - calc(100%/#{$slidesShown})));
+                    }
+                }
         
-        
-
-        & img {
-            width: 100%;
-            height: 100%;
-            border-radius: 1rem;
-
-            transform: scale(.9);
-            transition: all .2s;
-
-            &:hover {
-                transform: scale(1);
-                border: solid 2px $color-primary;
+                &.not-sliding_track {
+                    transition: transform .5s ease;
+                    transform: translateX(calc(-100%/#{$slidesShown}));
+                }
             }
-        }
 
-        &.sliding_track {
-            transition:transform .25s ease;
-            &-prev{
-                transform:translateX(20%);
-            }
-            &-next{
-                transform:translateX(-20%);
-            }
-        }
-
-        &.not-sliding_track {
-            transition: transform .5s ease;
-            transform: translateX(0%);
         }
     }
-
 }

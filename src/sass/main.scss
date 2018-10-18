@@ -1,4 +1,5 @@
 @import "abstracts/variables";
+@import "abstracts/mixins";
 
 @import "base/base";
 @import "base/typography";
@@ -11,3 +12,4 @@
 @import "components/loading";
 @import "components/moviesSection/movies-section";
 @import "components/moviesSection/movies-slider";
+@import "components/moviesSection/movie-slot";

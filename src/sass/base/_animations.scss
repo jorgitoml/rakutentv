@@ -9,3 +9,13 @@
     opacity: 1;
   }
 }
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.1);
+  }
+}

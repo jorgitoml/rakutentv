@@ -1,0 +1,109 @@
+.movie-slot {
+    overflow:hidden;
+    flex: 1 0 calc(100%/#{$slidesShown});
+    
+    position: relative;
+
+    
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 1rem;
+
+        transform: scale(.9);
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1);
+            border: solid 2px $color-primary;
+        }
+
+        & img {
+            border-radius: 1rem;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__info {
+            position: absolute;
+            top: 75%;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+            @include info_slot-separator;
+            background-color: rgba($color-grey-dark,.5);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            
+            transition: all .5s;
+
+            &-title{
+                flex: 0 0 25%;
+                font-size: $sub-title-font-size;
+                font-weight: 700;
+                text-align: center;
+                line-height: 1.4;
+
+                @include flex_center;
+                
+            }
+
+            &-data{
+                width: 100%;
+                flex: 0 0 10%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                background-color: $color-grey-dark;
+
+                @include info_slot-separator;
+
+
+                & > * {
+                    padding: 5%;
+                }
+
+
+            }
+
+            &-action {
+                @include info_slot-separator;
+                @include flex_center;
+                flex-grow: 1;
+                font-size: $giant-font-size;
+
+                & > i {
+                    cursor: pointer;
+
+                    transition: opacity .2s;
+                    opacity: .5;
+
+                    &:hover {
+                        opacity: 1;
+
+                        animation: beat 1s ease 0s infinite;
+                    }
+                }
+            }
+        }
+
+        &__ribbons {
+            position: absolute;
+
+            &.top-left{
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &:hover &__info {
+            top: 0px;
+        }
+    }
+}

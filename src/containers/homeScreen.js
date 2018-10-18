@@ -16,13 +16,6 @@ class HomeScreen extends Component {
         }   
     }
 
-    hanleMovieClick = (id) => {
-        this.props.history.push({
-            pathname: '/detail',
-            search: `id=${id}`
-        });
-    }
-
     render() {
 
         return (
@@ -33,8 +26,7 @@ class HomeScreen extends Component {
                     :
                     <Layout>
                         {
-                            //TEST SLICE
-                            this.props.sections.map(item=><MoviesSection key={item.id} section={item} showDetail={this.hanleMovieClick} />)
+                            this.props.sections.map(item=><MoviesSection key={item.id} section={item} />)
                         }
                     </Layout>
                 }

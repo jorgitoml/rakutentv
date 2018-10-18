@@ -1,0 +1,9 @@
+@mixin flex_center {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+
+@mixin info_slot-separator {
+    border-top: 2px solid $color-grey-light;
+}
