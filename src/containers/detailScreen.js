@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 import AuxHoc from '../hoc/auxHoc';
 import Loading from '../components/Loading/loading.js';
@@ -7,6 +8,9 @@ import Layout from '../hoc/layout';
 
 class SplashScreen extends Component {
     render() {
+
+        console.log(this.props);
+
         return (
             <AuxHoc>
                 {
@@ -29,4 +33,4 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps)(SplashScreen);
+export default withRouter(connect(mapStateToProps)(SplashScreen));

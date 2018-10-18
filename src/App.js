@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <Switch>
-                <Route path="/detail" component={asyncDetailScreen} />
+                <Route path="/detail/:id" exact component={asyncDetailScreen} />
                 <Route path="/" exact component={HomeScreen} />
                 <Redirect to="/" />
             </Switch>

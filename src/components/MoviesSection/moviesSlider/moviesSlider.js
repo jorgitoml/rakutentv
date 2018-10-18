@@ -49,8 +49,7 @@ class moviesSlider extends Component {
 
     hanleMovieClick = (id) => {
         this.props.history.push({
-            pathname: '/detail',
-            search: `id=${id}`
+            pathname: `detail/${id}`
         });
     }
 
