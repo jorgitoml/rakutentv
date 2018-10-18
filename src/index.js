@@ -8,7 +8,8 @@ import createSagaMiddleware from 'redux-saga';
 
 import statusReducer from './store/reducers/statusReducer';
 import contentReducer from './store/reducers/contentReducer';
-import {watchSectionsSaga} from './store/sagas/index';
+import movieReducer from './store/reducers/movieReducer';
+import {watchSectionsSaga, watchMovieSaga} from './store/sagas/index';
 
 import './sass/main.scss';
 import App from './App';
@@ -17,7 +18,8 @@ const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX
 
 const rootReducer = combineReducers({
     status: statusReducer,
-    content: contentReducer
+    content: contentReducer,
+    selected: movieReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -30,6 +32,7 @@ const store = createStore(
 );
 
 sagaMiddleware.run(watchSectionsSaga);
+sagaMiddleware.run(watchMovieSaga);
 
 const app = (
     <Provider store={store}>

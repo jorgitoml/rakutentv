@@ -2,16 +2,16 @@ import * as actionTypes from '../actions/actionTypes';
 import {updateObject} from '../../shared/utils';
 
 const initialState = {
-    sections: []
+    movie: []
 };
 
-const fetchSectionsSuccess = (state,action)=>{
-    return updateObject(state,{sections: action.sections});
+const fetchMovieSuccess = (state,action)=>{
+    return updateObject(state,{movie: action.movie});
 }
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.FETCH_SECTIONS_SUCCESS: return fetchSectionsSuccess(state,action);
+        case actionTypes.FETCH_MOVIE_SUCCESS: return fetchMovieSuccess(state,action);
         default: return state;
     }
 }

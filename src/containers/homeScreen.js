@@ -22,7 +22,7 @@ class HomeScreen extends Component {
             <AuxHoc>
                 {
                     (this.props.status.loading || !this.props.sections.length) ? 
-                    <Loading  error={this.props.status.error} />
+                    <Loading  error={this.props.status.error}  message={this.props.status.errorMessage} />
                     :
                     <Layout>
                         {

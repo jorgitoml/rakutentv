@@ -52,7 +52,6 @@ export function* fetchSectionsSaga(){
         yield put(actions.fetchSectionsSuccess(sectionsData));
 
     }catch(error){
-        console.log(error);
         yield put(actions.fetchSectionsFailed());
     }
 }
