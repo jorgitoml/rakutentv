@@ -16,13 +16,16 @@ const movieSlot = (props) => {
                 }
 
                 <div className="movie-slot__container__info">
-                    <div className="movie-slot__container__info-title">{props.movie.title}</div>
-                    <div className="movie-slot__container__info-data">
+                    <div className="movie-slot__container__info__title">{props.movie.title}</div>
+                    <div className="movie-slot__container__info__data">
                         <div className="fas fa-star"> {props.movie.highlighted_score.score}</div>
                         <div className="fas fa-users"> {props.movie.highlighted_score.formatted_amount_of_votes}</div>
                     </div>
-                    <div className="movie-slot__container__info-action">
+                    <div className="movie-slot__container__info__action">
                         <i className="fas fa-info-circle" onClick={()=>props.hanleClick(props.movie.id)}></i>
+                    </div>
+                    <div className="movie-slot__container__info__data">
+                        {props.movie.label}
                     </div>
                 </div>
                     

@@ -61,8 +61,8 @@ class moviesSlider extends Component {
 
         const track_style = ['movies-slider__container__viewer__track'];
         this.state.sliding ? 
-            (this.state.direction==='next') ? track_style.push('sliding_track','sliding_track-next') : track_style.push('sliding_track','sliding_track-prev') 
-            : track_style.push('not-sliding_track');
+            (this.state.direction==='next') ? track_style.push('sliding-track','sliding-track-next') : track_style.push('sliding-track','sliding-track-prev') 
+            : track_style.push('not-sliding-track');
 
         return (
             <div className="movies-slider">

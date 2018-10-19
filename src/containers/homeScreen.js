@@ -25,9 +25,11 @@ class HomeScreen extends Component {
                     <Loading  error={this.props.status.error}  message={this.props.status.errorMessage} />
                     :
                     <Layout>
-                        {
-                            this.props.sections.map(item=><MoviesSection key={item.id} section={item} />)
-                        }
+                        <div className="home__container">
+                            {
+                                this.props.sections.map(item=><MoviesSection key={item.id} section={item} />)
+                            }
+                        </div>
                     </Layout>
                 }
             </AuxHoc>

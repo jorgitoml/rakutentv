@@ -5,14 +5,15 @@ import logo from '../../assets/img/logo_rtv.png';
 const loading = (props) => {
     return (
         <div className="loading">
-            <figure className="loading__image-box">
-                <img src={logo} alt="Logo" className="loading__image" />
+            <figure className="loading__figure">
+                <img src={logo} alt="Logo" className="loading__figure__image" />
             </figure>
+            
             {
                 props.error ? 
-                    <section className="loading__error-box">
-                        <h1 className="loading__error-title">Se ha producido un error</h1>
-                        <p className="loading__error-subtitle">{props.message}</p>
+                    <section className="loading__error">
+                        <h1 className="loading__error__title">Se ha producido un error</h1>
+                        <p className="loading__error__subtitle">{props.message}</p>
                     </section> 
                 : 
                     null

@@ -26,3 +26,9 @@ export const fetchMovieFailed = (message)=>{
         message: message
     };
 }
+
+export const clearMovie = () =>{
+    return {
+        type: actionTypes.CLEAR_MOVIE
+    };
+};

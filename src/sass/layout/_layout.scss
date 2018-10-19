@@ -1,35 +1,39 @@
 .layout {
 
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
 
     &__header {
+        flex: 0 0 7rem;
+
+        padding: 1rem 2rem;
         background-color: #000;
         border-bottom: .1rem solid $color-grey-light;
-        flex: 0 0 7rem;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        padding: 1rem 2rem;
+        
 
-        &-logo {
+        &__logo {
             flex: 0 0 10%;
-            width: auto;
         }
 
-        &-title {
+        &__title {
             flex: 0 0 90%;
+
+            padding: 0rem 5rem 0rem 10rem;
             overflow: hidden;
+            
+            font-size: $title-font-size;
+            font-weight: 700;
+            letter-spacing: .15rem;
             text-transform: uppercase;
             text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: 700;
-            font-size: $title-font-size;
-            letter-spacing: .15rem;
-            padding: 0rem 5rem 0rem 10rem;
+            white-space: nowrap; 
         }
     }
     
@@ -39,7 +43,7 @@
         overflow: hidden;
         position: relative;
 
-        &-inner{
+        &__inner{
             position: absolute;
             top: 0;
             left: 0;
@@ -48,11 +52,11 @@
             overflow-y: auto;
 
             margin: 0 1rem 1rem 0rem;
+
+
+            .page__container {
+                padding: 2rem 5rem;
+            }
         }
-    }
-
-
-    &__container {
-        padding: 2rem 5rem;
     }
 }
