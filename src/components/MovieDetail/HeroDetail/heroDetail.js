@@ -5,7 +5,7 @@ const heroDetail = (props) => {
         <div className="hero-detail">
             <div className="hero-detail__background" style={{backgroundImage: `url(${props.movie.images.snapshot})`}} />
             <div className="hero-detail__content">
-                <i className="fas fa-play-circle"></i>
+                <i className="fas fa-play-circle" onClick={()=>props.openPlayer(props.movie.id)}></i>
 
                 <div className="hero-detail__content__info">
                     <div className="hero-detail__content__info__title">

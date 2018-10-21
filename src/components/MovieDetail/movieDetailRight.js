@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Toast from '../Toast/toast';
+
 const movieDetailRight = (props) => {
     return (
-        <div className="movie-detail-right">
+        <Toast className="movie-detail-right">
             {props.children}
-        </div>
+        </Toast>
     );
 };
 

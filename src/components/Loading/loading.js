@@ -1,6 +1,7 @@
 import React from 'react';
 
 import logo from '../../assets/img/logo_rtv.png';
+import Toast from '../Toast/toast';
 
 const loading = (props) => {
     return (
@@ -11,10 +12,10 @@ const loading = (props) => {
             
             {
                 props.error ? 
-                    <section className="loading__error">
+                    <Toast className={"loading__error"}>
                         <h1 className="loading__error__title">Se ha producido un error</h1>
                         <p className="loading__error__subtitle">{props.message}</p>
-                    </section> 
+                    </Toast>
                 : 
                     null
             }

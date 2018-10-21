@@ -10,6 +10,7 @@
 @import "containers/home";
 @import "containers/detail";
 
+@import "components/toast";
 @import "components/loading";
 @import "components/moviesSection/movies-section";
 @import "components/moviesSection/movies-slider";
@@ -18,3 +19,5 @@
 @import "components/movieDetail/movie-detail-center";
 @import "components/movieDetail/movie-detail-right";
 @import "components/movieDetail/hero-detail";
+
+@import "components/modalPlayer/modalPlayer";

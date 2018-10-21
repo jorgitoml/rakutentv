@@ -8,3 +8,6 @@ export const FETCH_MOVIE_START = 'FETCH_MOVIE_START';
 export const FETCH_MOVIE_SUCCESS = 'FETCH_MOVIE_SUCCESS';
 export const FETCH_MOVIE_FAIL = 'FETCH_MOVIE_FAIL';
 export const CLEAR_MOVIE = 'CLEAR_MOVIE';
+
+export const SHOW_PLAYER = 'SHOW_PLAYER';
+export const HIDE_PLAYER = 'HIDE_PLAYER';
