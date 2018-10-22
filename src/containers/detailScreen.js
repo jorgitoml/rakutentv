@@ -22,10 +22,10 @@ class detailScreen extends Component {
         this.props.onLeave();
     }
 
-    handleShowPlayer = (id)=>this.props.onShowPlayer(id);
+    handleInitPlayer = ()=>this.props.onInitPlayer(this.props.match.params.id);
 
     render() {
-        console.log(this.props.movie);
+        //console.log(this.props.movie);
 
         return (
             <AuxHoc>
@@ -34,14 +34,14 @@ class detailScreen extends Component {
                     <Loading  error={this.props.status.error} message={this.props.status.errorMessage}/>
                     :
                     <Layout title={this.props.movie.title}>
-                        <ModalPlayer show={this.props.status.playerShown} playerPoster={this.props.movie.images.snapshot}/>
+                        <ModalPlayer show={this.props.status.player.shown} playerPoster={this.props.movie.images.snapshot}/>
                         
                         <div className="detail-container">
 
                             <MovieDetailLeft movie={this.props.movie} />
 
 
-                            <MovieDetailCenter movie={this.props.movie} openPlayer={this.handleShowPlayer}/>
+                            <MovieDetailCenter movie={this.props.movie} openPlayer={this.handleInitPlayer}/>
 
 
                             <MovieDetailRight movie={this.props.movie} />
@@ -66,7 +66,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onInitMovie: (id)=>dispatch(actions.fetchMovie(id)),
         onLeave: ()=>dispatch(actions.clearMovie()),
-        onShowPlayer: (id)=>dispatch(actions.showPlayer(id)),
+        onInitPlayer: (id)=>dispatch(actions.initPlayer(id)),
     };
 }
 

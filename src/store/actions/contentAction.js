@@ -19,8 +19,9 @@ export const fetchSectionsSuccess = (sections)=>{
     };
 }
 
-export const fetchSectionsFailed = ()=>{
+export const fetchSectionsFailed = (message)=>{
     return {
-        type: actionTypes.FETCH_SECTIONS_FAIL
+        type: actionTypes.FETCH_SECTIONS_FAIL,
+        message: message
     };
 }

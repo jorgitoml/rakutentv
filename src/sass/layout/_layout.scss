@@ -19,13 +19,17 @@
         
 
         &__logo {
-            flex: 0 0 10%;
+            flex: 0 0 5%;
+
+            &:hover {
+                animation: beat .75s ease 0s infinite;
+            }
         }
 
         &__title {
-            flex: 0 0 90%;
+            flex: 0 0 95%;
 
-            padding: 0rem 5rem 0rem 10rem;
+            padding: 0rem 5rem;
             overflow: hidden;
             
             font-size: $title-font-size;
@@ -34,6 +38,7 @@
             text-transform: uppercase;
             text-overflow: ellipsis;
             white-space: nowrap; 
+            text-align: center;
         }
     }
     

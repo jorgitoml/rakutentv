@@ -8,12 +8,46 @@
     background-color: rgba($color-grey-dark,.7);
 
     @include flex_center;
-
-    & > video {
+    
+    &__container {
         width: 70%;
         z-index: 200;
-        
-        animation-name: appear;
-        animation-duration: .3s;
+
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+
+        position: relative;
+
+
+        & > i {
+            position: absolute;
+            top: -2rem;
+            right: -2rem;
+
+            cursor: pointer;
+            font-size: $sub-title-font-size;
+
+            opacity: .5;
+            transition: all .2s;
+
+            &:hover {
+                color: $color-red-light;
+                opacity: 1;
+                animation: beat .75s ease 0s infinite;
+            }
+        }
+    
+        & > video {
+            width: 100%;
+            
+            animation-name: appear;
+            animation-duration: .3s;
+        }
+
+        &__error .loading {
+            height: 50vh;
+        }
     }
 }

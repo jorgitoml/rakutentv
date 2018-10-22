@@ -1,5 +1,5 @@
 import {put} from 'redux-saga/effects';
-import axios from '../../axios.contents';
+import axios from '../../axios.rakuten';
 
 import * as actions from '../actions/index';
 
@@ -52,6 +52,6 @@ export function* fetchSectionsSaga(){
         yield put(actions.fetchSectionsSuccess(sectionsData));
 
     }catch(error){
-        yield put(actions.fetchSectionsFailed());
+        yield put(actions.fetchSectionsFailed(error.message));
     }
 }

@@ -9,7 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import statusReducer from './store/reducers/statusReducer';
 import contentReducer from './store/reducers/contentReducer';
 import movieReducer from './store/reducers/movieReducer';
-import {watchSectionsSaga, watchMovieSaga} from './store/sagas/index';
+import {watchSectionsSaga, watchMovieSaga, watchPlayerSaga} from './store/sagas/index';
 
 import './sass/main.scss';
 import App from './App';
@@ -33,6 +33,7 @@ const store = createStore(
 
 sagaMiddleware.run(watchSectionsSaga);
 sagaMiddleware.run(watchMovieSaga);
+sagaMiddleware.run(watchPlayerSaga);
 
 const app = (
     <Provider store={store}>
