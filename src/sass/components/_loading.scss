@@ -30,10 +30,11 @@
             letter-spacing: .15rem;
             color: $color-red-dark;
             text-transform: uppercase;
+            text-align: center;
         }
     
         &__subtitle {
-            font-size: 2rem;
+            font-size: $sub-title-font-size;
             color: $color-red-light;
         }
     }
