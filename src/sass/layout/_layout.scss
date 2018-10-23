@@ -16,20 +16,31 @@
         justify-content: space-between;
         align-items: center;
 
-        
+        @include respond(small) {
+            flex: 0 0 10rem;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         &__logo {
-            flex: 0 0 5%;
+            flex: 0 0 20%;
+            cursor: default;
 
-            &:hover {
-                animation: beat .75s ease 0s infinite;
+            & > img {
+                height: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    animation: beat .75s ease 0s infinite;
+                }
             }
+            
         }
 
         &__title {
-            flex: 0 0 95%;
+            flex: 0 0 60%;
+            margin-right: 20%; 
 
-            padding: 0rem 5rem;
             overflow: hidden;
             
             font-size: $title-font-size;
@@ -39,6 +50,10 @@
             text-overflow: ellipsis;
             white-space: nowrap; 
             text-align: center;
+
+            @include respond(small) {
+                margin-right: 0; 
+            }
         }
     }
     
@@ -61,6 +76,13 @@
 
             .page__container {
                 padding: 2rem 5rem;
+
+                @include respond(small) {
+                    padding: 2rem 3rem;
+                }
+                @include respond(small) {
+                    padding: 2rem 2rem;
+                }
             }
         }
     }

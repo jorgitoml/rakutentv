@@ -6,10 +6,21 @@
     justify-content: flex-start;
     align-items: flex-start;
 
+    
+
     &__info {
         width: 100%;
         padding: 1rem;
-        
+
+        &__container {
+            @include respond(small) {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+        }
     }
 }
 

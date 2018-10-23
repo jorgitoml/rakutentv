@@ -9,8 +9,8 @@ const Layout = (props) => {
         <div className="layout">
 
             <header className="layout__header">
-                <Link to="/">
-                    <img className="layout__header__logo" alt="Logo" src={logo} />
+                <Link to="/" className="layout__header__logo">
+                    <img alt="Logo" src={logo} />
                 </Link>
                 
                 {

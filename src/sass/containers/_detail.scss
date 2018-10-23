@@ -3,4 +3,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include respond(small) {
+        flex-direction: column;
+
+        justify-content: space-around;
+        align-items: center;
+    }
 }

@@ -1,9 +1,18 @@
 .movie-slot {
     overflow:hidden;
-    flex: 1 0 calc(100%/#{$slidesShown});
-    
     position: relative;
+    height:100%;
     
+    flex: 1 0 calc(100%/#{$slidesShown});
+    @include respond(medium) {
+        flex: 1 0 calc(100%/#{$slidesShown-Min});
+    }
+    @include respond(small) {
+        flex: 1 0 calc(100%/#{$slidesShown-Tiny});
+    }
+    @include respond(largest) {
+        flex: 1 0 calc(100%/#{$slidesShown-Max});
+    }
 
     &__container {
 
@@ -57,10 +66,17 @@
             
             transition: all .5s;
 
+            @include respond(medium) {
+                top: 60%;
+            }
+            @include respond(small) {
+                top: 50%;
+            }
+
             &__title{
                 width: 100%;
                 background-color: rgba($color-grey-dark,.7);
-                flex: 0 0 25%;
+                flex: 1 0 25%;
                 font-size: $sub-title-font-size;
                 font-weight: 700;
                 text-align: center;
@@ -68,6 +84,10 @@
                 text-transform: uppercase;
 
                 @include flex_center;
+
+                @include respond(medium) {
+                    flex: 1 0 30%;
+                }
                 
             }
 
@@ -93,8 +113,13 @@
             &__action {
                 @include info_slot-separator;
                 @include flex_center;
-                flex-grow: 1;
+                flex: 1 1 55%;
                 font-size: $giant-font-size;
+
+                @include respond(small) {
+                    flex: 1 1 30%;
+                    font-size: $hero-title-font-size;
+                }
 
                 & > i {
                     cursor: pointer;

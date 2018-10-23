@@ -17,6 +17,10 @@
         width: 100%;
         padding: 1rem;
 
+        @include respond(small) {
+            font-size: $title-font-size;
+        }
+
         & i {
             width: 2rem;
             margin-right: 10%;
@@ -41,19 +45,29 @@
 
         &__item {
             flex: 0 0 50%;
+            overflow: hidden;
 
             margin-top: .5rem;
             text-align: center;
 
             color: $color-secondary;
+            line-height: 1;
 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
+            @include respond(small) {
+                flex: 0 0 30%;
+            }
+
             & > img {
                 width: 50%;
+
+                @include respond(small) {
+                    width: 30%;
+                }
             }
         }
     }

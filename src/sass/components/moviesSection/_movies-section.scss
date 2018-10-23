@@ -1,6 +1,10 @@
 .movie-section {
     padding: 2rem 0;
 
+    @include respond(small) {
+        padding: 1rem 0;
+    }
+
     &__title {
         padding: 1rem 2rem;
         font-size: $sub-title-font-size;

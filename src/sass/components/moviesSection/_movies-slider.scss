@@ -48,15 +48,45 @@
                     
                     &-prev{
                         transform:translateX(calc(5% - calc(100%/#{$slidesShown})));
+
+                        @include respond(medium) {
+                            transform:translateX(calc(5% - calc(100%/#{$slidesShown-Min})));
+                        }
+                        @include respond(small) {
+                            transform:translateX(calc(5% - calc(100%/#{$slidesShown-Tiny})));
+                        }
+                        @include respond(largest) {
+                            transform:translateX(calc(5% - calc(100%/#{$slidesShown-Max})));
+                        }
                     }
                     &-next{
                         transform:translateX(calc(-5% - calc(100%/#{$slidesShown})));
+
+                        @include respond(medium) {
+                            transform:translateX(calc(-5% - calc(100%/#{$slidesShown-Min})));
+                        }
+                        @include respond(small) {
+                            transform:translateX(calc(-5% - calc(100%/#{$slidesShown-Tiny})));
+                        }
+                        @include respond(largest) {
+                            transform:translateX(calc(-5% - calc(100%/#{$slidesShown-Max})));
+                        }
                     }
                 }
         
                 &.not-sliding-track {
                     transition: transform .5s ease;
                     transform: translateX(calc(-100%/#{$slidesShown}));
+
+                    @include respond(medium) {
+                        transform: translateX(calc(-100%/#{$slidesShown-Min}));
+                    }
+                    @include respond(small) {
+                        transform: translateX(calc(-100%/#{$slidesShown-Tiny}));
+                    }
+                    @include respond(largest) {
+                        transform: translateX(calc(-100%/#{$slidesShown-Max}));
+                    }
                 }
             }
 
