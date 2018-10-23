@@ -10,10 +10,51 @@
         width: 100%;
         filter: grayscale(1);
 
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
 
     &__info {
-        list-style: none;
+        width: 100%;
+        padding: 1rem;
+
+        & i {
+            width: 2rem;
+            margin-right: 10%;
+            text-align: center;
+        }
+
+        &__text {
+            color: $color-secondary;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    &__genre {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        &__item {
+            flex: 0 0 50%;
+
+            margin-top: .5rem;
+            text-align: center;
+
+            color: $color-secondary;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > img {
+                width: 50%;
+            }
+        }
     }
 }

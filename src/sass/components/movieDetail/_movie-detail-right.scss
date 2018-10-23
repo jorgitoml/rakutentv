@@ -1,6 +1,15 @@
 .movie-detail-right {
     flex: 0 0 15%;
 
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__info {
+        width: 100%;
+        padding: 1rem;
+        
+    }
 }
 

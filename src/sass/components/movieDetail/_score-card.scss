@@ -1,0 +1,22 @@
+.score-card {
+    flex: 0 0 20%;
+    margin: 1rem;
+    background-color: rgba($color-grey-light,.5);
+    border-radius: 1rem;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    &:hover {
+        animation: beat .75s ease 0s infinite;
+    }
+
+    &__logo {
+        width:100%;
+        padding: 1rem;
+
+        & > img {
+            width: 100%;
+        }
+    }
+}

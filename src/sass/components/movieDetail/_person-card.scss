@@ -1,0 +1,47 @@
+.person-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    margin: 5% 0;
+    overflow: hidden;
+
+    box-shadow: 0 .4rem .8rem 0 rgba($color-grey-light-1,.2);
+
+    &:hover .person-card__picture{
+        filter: none;
+    }
+
+    &__picture {
+        width: 100%;
+        height: 100%;
+        margin-right: 1rem;
+        
+        overflow: hidden;
+        border-radius: 1rem 1rem 0 0;
+
+        text-align: center;
+        vertical-align: bottom;
+
+        transition: all .5s;
+        filter: grayscale(1);
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            
+        }
+
+        & > i {
+            font-size: 4rem;
+        }
+    }
+
+    &__text {
+        flex: 0 0 70%;
+        color: $color-secondary;
+        overflow: hidden;
+    }
+}

@@ -1,4 +1,27 @@
 .movie-detail-center {
     flex: 0 0 60%;
 
+    &__sinopsis {
+        padding: 2rem;
+        margin-top: 3rem;
+
+        & > p {
+            color: $color-secondary;
+            font-size: $sub-title-font-size;
+        }
+    }
+
+    &__scores {
+        padding: 2rem;
+        margin-top: 3rem;
+        width: 100%;
+
+        &__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
 }

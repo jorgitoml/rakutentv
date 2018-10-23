@@ -46,7 +46,9 @@ const errorPlayer = (state, action)=>{
     return updateObject(state,{player: updateObject(state.player,{error: true, errorMessage: action.message})});
 }
 
-
+const clearMovie = (state)=>{
+    return updateObject(state,{player: updateObject(state.player,{shown: false, error: false, errorMessage:'', sources:null})});
+}
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
@@ -62,6 +64,7 @@ const reducer = (state=initialState, action)=>{
         case actionTypes.LOAD_PLAYER: return loadPlayer(state,action);
         case actionTypes.HIDE_PLAYER: return hidePlayer(state);
         case actionTypes.ERROR_PLAYER: return errorPlayer(state,action);
+        case actionTypes.CLEAR_MOVIE: return clearMovie(state);
         default: return state;
     }
 }
