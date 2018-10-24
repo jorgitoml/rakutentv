@@ -8,8 +8,6 @@ import * as actions from '../../store/actions/index';
 
 class modalPlayer extends Component {
 
-    playerRef = React.createRef();
-
     handleHidePlayer = ()=>{
         this.props.onHidePlayer();
     }
