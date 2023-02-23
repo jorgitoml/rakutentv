@@ -58,7 +58,7 @@
     "react-swipeable": "^4.3.0",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.2",
-    "@snyk/protect": "latest"
+    "@snyk/protect": "1.1094.0"
   },
   "snyk": true
 }
